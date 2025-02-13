@@ -2,6 +2,7 @@
 
 package com.riiablo.net.packet.netty;
 
+@SuppressWarnings("unused")
 public final class ConnectionState {
   private ConnectionState() { }
   public static final byte request = 0;

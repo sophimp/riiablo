@@ -2,6 +2,7 @@
 
 package com.riiablo.net.packet.mcp;
 
+@SuppressWarnings("unused")
 public final class Result {
   private Result() { }
   public static final int SUCCESS = 0;

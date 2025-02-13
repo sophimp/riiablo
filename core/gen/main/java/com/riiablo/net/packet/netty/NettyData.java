@@ -2,6 +2,7 @@
 
 package com.riiablo.net.packet.netty;
 
+@SuppressWarnings("unused")
 public final class NettyData {
   private NettyData() { }
   public static final byte NONE = 0;

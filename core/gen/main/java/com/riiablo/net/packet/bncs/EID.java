@@ -2,6 +2,7 @@
 
 package com.riiablo.net.packet.bncs;
 
+@SuppressWarnings("unused")
 public final class EID {
   private EID() { }
   public static final byte EID_SHOWUSER = 1;

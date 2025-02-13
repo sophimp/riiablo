@@ -2,14 +2,26 @@
 
 package com.riiablo.net.packet.d2gs;
 
-import java.nio.*;
-import java.lang.*;
-import java.util.*;
-import com.google.flatbuffers.*;
+import com.google.flatbuffers.BaseVector;
+import com.google.flatbuffers.BooleanVector;
+import com.google.flatbuffers.ByteVector;
+import com.google.flatbuffers.Constants;
+import com.google.flatbuffers.DoubleVector;
+import com.google.flatbuffers.FlatBufferBuilder;
+import com.google.flatbuffers.FloatVector;
+import com.google.flatbuffers.IntVector;
+import com.google.flatbuffers.LongVector;
+import com.google.flatbuffers.ShortVector;
+import com.google.flatbuffers.StringVector;
+import com.google.flatbuffers.Struct;
+import com.google.flatbuffers.Table;
+import com.google.flatbuffers.UnionVector;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 @SuppressWarnings("unused")
 public final class EntitySync extends Table {
-  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
+  public static void ValidateVersion() { Constants.FLATBUFFERS_25_2_10(); }
   public static EntitySync getRootAsEntitySync(ByteBuffer _bb) { return getRootAsEntitySync(_bb, new EntitySync()); }
   public static EntitySync getRootAsEntitySync(ByteBuffer _bb, EntitySync obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
   public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
@@ -33,11 +45,11 @@ public final class EntitySync extends Table {
       int entityId,
       int type,
       int flags,
-      int component_typeOffset,
+      int componentTypeOffset,
       int componentOffset) {
     builder.startTable(5);
     EntitySync.addComponent(builder, componentOffset);
-    EntitySync.addComponentType(builder, component_typeOffset);
+    EntitySync.addComponentType(builder, componentTypeOffset);
     EntitySync.addEntityId(builder, entityId);
     EntitySync.addFlags(builder, flags);
     EntitySync.addType(builder, type);
@@ -46,8 +58,8 @@ public final class EntitySync extends Table {
 
   public static void startEntitySync(FlatBufferBuilder builder) { builder.startTable(5); }
   public static void addEntityId(FlatBufferBuilder builder, int entityId) { builder.addInt(0, entityId, 0); }
-  public static void addType(FlatBufferBuilder builder, int type) { builder.addByte(1, (byte)type, (byte)0); }
-  public static void addFlags(FlatBufferBuilder builder, int flags) { builder.addByte(2, (byte)flags, (byte)0); }
+  public static void addType(FlatBufferBuilder builder, int type) { builder.addByte(1, (byte) type, (byte) 0); }
+  public static void addFlags(FlatBufferBuilder builder, int flags) { builder.addByte(2, (byte) flags, (byte) 0); }
   public static void addComponentType(FlatBufferBuilder builder, int componentTypeOffset) { builder.addOffset(3, componentTypeOffset, 0); }
   public static int createComponentTypeVector(FlatBufferBuilder builder, byte[] data) { builder.startVector(1, data.length, 1); for (int i = data.length - 1; i >= 0; i--) builder.addByte(data[i]); return builder.endVector(); }
   public static void startComponentTypeVector(FlatBufferBuilder builder, int numElems) { builder.startVector(1, numElems, 1); }

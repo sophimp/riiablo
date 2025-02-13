@@ -2,6 +2,7 @@
 
 package com.riiablo.net.packet.bnls;
 
+@SuppressWarnings("unused")
 public final class BNLSData {
   private BNLSData() { }
   public static final byte NONE = 0;

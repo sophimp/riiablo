@@ -2,6 +2,7 @@
 
 package com.riiablo.net.packet.bncs;
 
+@SuppressWarnings("unused")
 public final class BNCSData {
   private BNCSData() { }
   public static final byte NONE = 0;

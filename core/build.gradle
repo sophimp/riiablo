@@ -1,8 +1,10 @@
-apply plugin: 'java-library'
 //apply plugin: 'artemis'
-apply plugin: 'io.netifi.flatbuffers'
+plugins {
+   id("java-library")
+   id("io.sophimp.flatbuffers")
+}
 
-import io.netifi.flatbuffers.plugin.tasks.FlatBuffers
+import io.sophimp.flatbuffers.plugin.tasks.FlatBuffers
 import org.gradle.internal.os.OperatingSystem
 
 import java.text.SimpleDateFormat

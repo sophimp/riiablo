@@ -2,6 +2,7 @@
 
 package com.riiablo.net.packet.msi;
 
+@SuppressWarnings("unused")
 public final class MSIData {
   private MSIData() { }
   public static final byte NONE = 0;

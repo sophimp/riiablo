@@ -2,6 +2,7 @@
 
 package com.riiablo.net.packet.d2gs;
 
+@SuppressWarnings("unused")
 public final class D2GSData {
   private D2GSData() { }
   public static final byte NONE = 0;

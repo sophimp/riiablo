@@ -2,14 +2,26 @@
 
 package com.riiablo.net.packet.mcp;
 
-import java.nio.*;
-import java.lang.*;
-import java.util.*;
-import com.google.flatbuffers.*;
+import com.google.flatbuffers.BaseVector;
+import com.google.flatbuffers.BooleanVector;
+import com.google.flatbuffers.ByteVector;
+import com.google.flatbuffers.Constants;
+import com.google.flatbuffers.DoubleVector;
+import com.google.flatbuffers.FlatBufferBuilder;
+import com.google.flatbuffers.FloatVector;
+import com.google.flatbuffers.IntVector;
+import com.google.flatbuffers.LongVector;
+import com.google.flatbuffers.ShortVector;
+import com.google.flatbuffers.StringVector;
+import com.google.flatbuffers.Struct;
+import com.google.flatbuffers.Table;
+import com.google.flatbuffers.UnionVector;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 @SuppressWarnings("unused")
 public final class GameSession extends Table {
-  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
+  public static void ValidateVersion() { Constants.FLATBUFFERS_25_2_10(); }
   public static GameSession getRootAsGameSession(ByteBuffer _bb) { return getRootAsGameSession(_bb, new GameSession()); }
   public static GameSession getRootAsGameSession(ByteBuffer _bb, GameSession obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
   public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
@@ -41,11 +53,11 @@ public final class GameSession extends Table {
   }
 
   public static void startGameSession(FlatBufferBuilder builder) { builder.startTable(5); }
-  public static void addIndex(FlatBufferBuilder builder, long index) { builder.addInt(0, (int)index, (int)0L); }
-  public static void addPlayers(FlatBufferBuilder builder, int players) { builder.addByte(1, (byte)players, (byte)0); }
+  public static void addIndex(FlatBufferBuilder builder, long index) { builder.addInt(0, (int) index, (int) 0L); }
+  public static void addPlayers(FlatBufferBuilder builder, int players) { builder.addByte(1, (byte) players, (byte) 0); }
   public static void addName(FlatBufferBuilder builder, int nameOffset) { builder.addOffset(2, nameOffset, 0); }
   public static void addDesc(FlatBufferBuilder builder, int descOffset) { builder.addOffset(3, descOffset, 0); }
-  public static void addFlags(FlatBufferBuilder builder, long flags) { builder.addInt(4, (int)flags, (int)0L); }
+  public static void addFlags(FlatBufferBuilder builder, long flags) { builder.addInt(4, (int) flags, (int) 0L); }
   public static int endGameSession(FlatBufferBuilder builder) {
     int o = builder.endTable();
     return o;

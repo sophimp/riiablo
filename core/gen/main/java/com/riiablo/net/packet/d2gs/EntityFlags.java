@@ -2,9 +2,10 @@
 
 package com.riiablo.net.packet.d2gs;
 
+@SuppressWarnings("unused")
 public final class EntityFlags {
   private EntityFlags() { }
-  public static final byte deleted = 1;
+  public static final int deleted = 1;
 
   public static final String[] names = { "deleted", };
 

@@ -2,14 +2,26 @@
 
 package com.riiablo.net.packet.bnls;
 
-import java.nio.*;
-import java.lang.*;
-import java.util.*;
-import com.google.flatbuffers.*;
+import com.google.flatbuffers.BaseVector;
+import com.google.flatbuffers.BooleanVector;
+import com.google.flatbuffers.ByteVector;
+import com.google.flatbuffers.Constants;
+import com.google.flatbuffers.DoubleVector;
+import com.google.flatbuffers.FlatBufferBuilder;
+import com.google.flatbuffers.FloatVector;
+import com.google.flatbuffers.IntVector;
+import com.google.flatbuffers.LongVector;
+import com.google.flatbuffers.ShortVector;
+import com.google.flatbuffers.StringVector;
+import com.google.flatbuffers.Struct;
+import com.google.flatbuffers.Table;
+import com.google.flatbuffers.UnionVector;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 @SuppressWarnings("unused")
 public final class BNLS extends Table {
-  public static void ValidateVersion() { Constants.FLATBUFFERS_1_12_0(); }
+  public static void ValidateVersion() { Constants.FLATBUFFERS_25_2_10(); }
   public static BNLS getRootAsBNLS(ByteBuffer _bb) { return getRootAsBNLS(_bb, new BNLS()); }
   public static BNLS getRootAsBNLS(ByteBuffer _bb, BNLS obj) { _bb.order(ByteOrder.LITTLE_ENDIAN); return (obj.__assign(_bb.getInt(_bb.position()) + _bb.position(), _bb)); }
   public void __init(int _i, ByteBuffer _bb) { __reset(_i, _bb); }
@@ -19,11 +31,11 @@ public final class BNLS extends Table {
   public Table data(Table obj) { int o = __offset(6); return o != 0 ? __union(obj, o + bb_pos) : null; }
 
   public static int createBNLS(FlatBufferBuilder builder,
-      byte data_type,
+      byte dataType,
       int dataOffset) {
     builder.startTable(2);
     BNLS.addData(builder, dataOffset);
-    BNLS.addDataType(builder, data_type);
+    BNLS.addDataType(builder, dataType);
     return BNLS.endBNLS(builder);
   }
 

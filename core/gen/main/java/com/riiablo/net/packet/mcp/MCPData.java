@@ -2,6 +2,7 @@
 
 package com.riiablo.net.packet.mcp;
 
+@SuppressWarnings("unused")
 public final class MCPData {
   private MCPData() { }
   public static final byte NONE = 0;

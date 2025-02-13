@@ -2,6 +2,7 @@
 
 package com.riiablo.net.packet.msi;
 
+@SuppressWarnings("unused")
 public final class Result {
   private Result() { }
   public static final byte SUCCESS = 0;
