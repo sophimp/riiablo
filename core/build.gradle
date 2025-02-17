@@ -1,7 +1,7 @@
 //apply plugin: 'artemis'
 plugins {
    id("java-library")
-   id("io.sophimp.flatbuffers")
+   id("io.github.sophimp.flatbuffers")
 }
 
 import io.sophimp.flatbuffers.plugin.tasks.FlatBuffers
